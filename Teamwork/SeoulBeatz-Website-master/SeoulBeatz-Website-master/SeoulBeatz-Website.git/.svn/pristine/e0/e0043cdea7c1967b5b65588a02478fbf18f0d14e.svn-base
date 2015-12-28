@@ -1,0 +1,29 @@
+<?php
+    include 'db.php';
+
+    if (isset($_GET['submit'])) {
+        $username = $_GET['username-reg'];
+        $password = $_GET['password-reg'];
+        $rptPassword = $_GET['password-repeat-reg'];
+        $email = $_GET['email-reg'];
+        $date = new DateTime();
+        $date = $date->format('y-m-d');
+
+
+        if (validateData($username, $password, $rptPassword, $email)) {
+            $registrated = registerUser($username, $password, $email, $date);
+        }
+    }
+
+    function validateData($username, $password, $password_repeated, $email) {
+        //Check is this username in DB
+        $isUnuqueUsername = checkExistance($username, 'username');
+        //Check is this email in DB
+        $isUniqueEmail = checkExistance($email, 'email');
+
+        if ($isUnuqueUsername && $isUniqueEmail && ($password === $password_repeated)) {
+            return true;
+        }
+
+        return false;
+    }

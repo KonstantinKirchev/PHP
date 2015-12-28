@@ -1,0 +1,39 @@
+<?php
+    if (isset($_GET['submit'])) {
+        $username = $_GET['username-reg'];
+        $password = $_GET['password-reg'];
+        $rptPassword = $_GET['password-repeat-reg'];
+        $email = $_GET['email-reg'];
+
+        registerUser($username, $password, $rptPassword, $email);
+    }
+
+    function registerUser($usrName, $usrPassword, $rptUsrPassword, $usrEmail) {
+        $servername = "sql3.freemysqlhosting.net:3306";
+        $username = "sql374186";
+        $password = "yE3%mI4!";
+        $date = new DateTime();
+        $date = $date->format('y-m-d');
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password);
+        $conn->select_db('sql374186');
+        var_dump($conn);
+
+        // Check connection
+        if (($conn->connect_error)){
+            header("Location: ../index.php");
+            return false;
+        } else
+
+        $usrPassword = md5($usrPassword);
+        $query = "INSERT INTO Users
+            VALUES('$usrName', '$usrPassword', '$usrEmail', '$date', '');";
+//        var_dump($conn);
+
+        $queryResult = mysqli_query($conn, $query)
+            or die(mysqli_error($conn));
+
+        header("Location: ../home.php");
+        return false;
+    }

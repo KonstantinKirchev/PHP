@@ -1,0 +1,35 @@
+.info {
+    display: none;
+    width: 400px;
+    position: fixed;
+    bottom: 150px;
+    background-color: #000;
+    border-radius: 10px;
+    left: 40%;
+    z-index: 5;
+    border: 1px solid yellowgreen;
+}
+
+.info > p {
+    width: 100%;
+    text-align: center;
+    color: #9fe400;
+}
+
+.info-error {
+    display: none;
+    width: 400px;
+    position: fixed;
+    bottom: 150px;
+    background-color: #000;
+    border-radius: 10px;
+    left: 40%;
+    z-index: 5;
+    border: 1px solid red;
+}
+
+.info-error > p {
+    width: 100%;
+    text-align: center;
+    color: red;
+}

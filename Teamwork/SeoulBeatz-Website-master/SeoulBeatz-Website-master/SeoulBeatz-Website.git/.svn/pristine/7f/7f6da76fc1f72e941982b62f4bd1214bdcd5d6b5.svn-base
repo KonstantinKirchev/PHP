@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>Charts</title>
+
+    <link rel="stylesheet" href="Styles/basic-template.css"/>
+    <link rel="stylesheet" href="Styles/charts.css"/>
+</head>
+<body>
+    <div class="background-image" id="background"></div>
+    <div id="wrapper">
+        <header>
+            <img src="Images/site-logo.png" alt="img is here"/>
+            <div>
+                <span>Username</span>
+                <div>
+                    <!-- hidden menu-->
+                    <a href="charts.php"><p>Charts</p></a>
+                    <a href="#" class="middle"><p>My Playlists</p></a>
+                    <a href="#"><p>Log Out</p></a>
+                </div>
+            </div>
+            <form action="search.php" method="post">
+                <input type="search" name="search" id="search"/>
+                <input type="submit" name="submit" value="Search"/>
+            </form>
+        </header>
+
+        <section>
+            <nav>
+                <ul>
+                    <li class="current-page"><a href="#">HOME</a></li>
+                    <li><a href="charts.php">CHART</a>
+                        <ul>
+                            <li><a href="#">Dance</a></li>
+                            <li><a href="#">Hip - Hop</a></li>
+                            <li><a href="#">Rock</a></li>
+                        </ul>
+                    </li> <!-- Submenu -->
+                    <li><a href="#">PLAYLISTS</a></li>
+                    <li><a href="#">CONTACTS</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="content-wrapper">
+            <?php
+                for($i = 0; $i < 3; $i++) {
+                    echo "<section class='chart'>
+                            <p>Chart $i</p>";
+
+                    for($j = 0; $j < 9; $j++) {
+                        echo "<div class='track'>
+                                <input type='button' value=''/>
+                                <p class='song-title'>Author - Song Title</p>
+                                <p class='song-genre''>Dance</p>
+                                <p class='song-length''>3:25</p>
+                              </div>";
+                    }
+
+                    echo "</section>";
+                }
+            ?>
+        </section>
+
+        <section class="player">
+            <img src="Images/test-album-cover.jpg" alt="Album Art"/>
+            <div class="song-info">
+                <p>Song Title Some Times Is Really Long Just Like Now</p>
+                <p>Short Artist Name</p>
+            </div>
+            <progress>
+
+            </progress>
+            <div class="lendth">
+                <p>1:23 / 3:25</p>
+            </div>
+            <div class="contorls">
+
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('background').style.height = window.innerHeight;
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?php
+    function getUsername() {
+        return '<span>' . $_SESSION['username'] . '</span>';
+    }
+
+    function getChartCategories() {
+        //Query which returns all different genres
+
+        $output = "<li><a href='#' id='dance' onclick='chart(this)'>Dance</a></li>
+                            <li><a href='#' id='hip-hop' onclick='chart(this)'>Hip - Hop</a></li>
+                            <li><a href='#' id='rock' onclick='chart(this)'>Rock</a></li>";
+
+        return $output;
+    }

@@ -1,0 +1,37 @@
+<?php
+    function generateCharts($playlistResult) {
+        //$genre = ($genre !== 'all') ? $genre : '*';
+
+
+
+
+    }
+
+    function content() {
+        //Get URL
+        $genre = preg_split("/[=]/", $_SERVER['REQUEST_URI'])[1];
+        //Check Genre
+        $genre = ($genre !== 'all') ? $genre : '*';
+        //Get highest rated thacks in this genre
+
+        //Call generateCharts
+
+        //return generatedChart
+
+//        for($i = 0; $i < 3; $i++) {
+//                    echo "<section class='chart'>
+//                            <p>Chart $i</p>";
+//
+//                    for($j = 0; $j < 9; $j++) {
+//                        echo "<div class='track'>
+//                                <input type='button' value='' />
+//                                <p class='song-title'>Author - Song Title</p>
+//                                <p class='song-genre''>Dance</p>
+//                                <p class='song-length''>3:25</p>
+//                              </div>";
+//                    }
+//
+//                    echo "</section>";
+//                }
+//
+    }

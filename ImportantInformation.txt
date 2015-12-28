@@ -1,0 +1,636 @@
+﻿ini_set('display_errors'); - Този ред ми изкарва грешките в браузъра
+
+DateTime................................................................................................................
+
+date_default_timezone_set("Europe/Sofia"); - Поставя се в началото на всяка програма свързана с време.
+
+$currentDate = strtotime("+1 day", $currentDate); - Така увеличавам с един ден.
+
+EndDateTime.............................................................................................................
+
+$p = 5;
+var_dump($p); -> int(5)  - По този начин отпечатвам стойността плюс типа й.
+
+echo gettype($maxInteger) . "\n"; ->integer - Това ми отпечатва типа данни.
+
+Когато препълним типа int минаваме към double.
+
+$str = "3.14";
+$num = (int)$str; -> 3
+$double = (double)$str; -> 3.14
+
+echo true -> 1
+
+$time = new DateTime("12.12.2000 23:25");
+echo $time->format('d/m/Y') . "<br/>"; -> 12/12/2000
+
+printf("%.2f", 11.0/3); -> 3.67
+
+// all information is in array lang that come in arr $_POST
+    echo "<pre>", print_r($_POST, true), "</pre>";
+
+$n = 12;
+echo "You are the {$n}th person" -> You are the 12th person
+
+$students = array("Dean", "Konstantin"); - обикновен масив
+
+$students['Dean'] = 6;
+$students['Vladislav'] = 5;
+$students = array('Dean' => 6, 'Vladislav' => 5); - Асоциативен масив
+
+$v = 4;
+unset($v); - Това изтрива(забравя) че v съществува и ако го отпечатаме ще каже че не съществува
+
+$secondName =& $firstName; - Приравнявам двете имена. Като промена едното се променя и другото.
+
+in_array(4,$array) -> true. Проверява дали 4 съществува в масива.
+
+define("TEXT", "Hello World."); - Така си дефинирам константа.
+
+filter_var($ip_a, FILTER_VALIDATE_IP) - Ще върне true или flase ако ipто е валидно или не. Има такива филтри и за email и т.н.
+
+die - спира изпълнението на цялата програма.
+
+header('Location: http://softuni.bg'); - пренасочва страницата към нова страница.
+
+foreach ($colors as $key => $value){ - => ключ сочи към стойност
+   echo "<p>$key -> $value</p>";}
+
+strtolower($str) - Стринга го прави с малки букви
+
+function func(&$param){ - & подаване по референция
+   $param = 5;
+   return $param * 2;
+}
+
+$p = 100;
+echo func($p); -> резултата е 10
+echo $p; -> 5 а не 100
+
+$array = [1,2,3];
+array_sum($array);
+array_push(4); -> [1,2,3,4]
+
+function calcSum(){
+	$sum = 0;
+foreach (func_get_args() as $args){ or func_num_args() - това са готови функции
+	$sum += $arg;
+}
+	return $sum;
+}
+echo calcSum(10,20,30), '<br />'; -> резултатът е 60
+
+list($a, $b) = [$b, $a]; - Така разменям стойностите на а и b.
+
+function move($x, $y){
+	return [$x+5, $y+5];
+}
+list($a, $b) = move(3,5);
+echo $a; -> 8
+echo $b; -> 10
+
+function printSomething($args){
+	echo "This is function. Arg = $arg";
+}
+$a = 'printSomething';
+$a(5); - Така си извиквам функцията.
+
+function mult($a, $b){
+	return $a * $b;
+}
+function apply($arr, $operation){
+	$result = 1;
+	foreach ($arr as $value){
+		$result = $operation($result, $value);
+	}
+	return $result;
+}
+echo apply([3,4,5], 'mult'); - Функцията apply вика функцията mult и умножава числата в масива.
+
+echo apply([3,4,5], function ($a,$b){ - анонимна(callback) функция
+	return $a - $b;
+});
+
+function_exists($name) - Проверява дали функцията съществува. Връща true или false
+
+$arr = ["Nakov", "Konstantin", "Angel"];
+sort($arr);
+usort($arr, function($a, $b){
+	return strlen($a) - strlen($b);
+});
+var_dump($arr);
+
+exit("End"); or die("End") - Приключва глобално целият скрипт.
+
+for ($i = 0; $i < 5; $i++){
+	$arr[] = $i;
+}
+print_r($arr); -> 0,1,2,3,4
+
+function callMe(){
+staric $count = 0; - Извиква се един път и повече не се вика.
+$count++;
+echo "callMe() is called $count times\n";
+}
+callMe(); callMe() is called 1 times
+callMe(); callMe() is called 2 times
+
+mb_internal_encoding("utf-8");
+header("Content-Type: text/html; charset=utf8");
+
+$prices = [
+	'orange' => 2.30,
+	'apple' => 1.55,
+	'grapes' => 1.80
+];
+
+$prices['potatos'] = 0.35; - Така добавям нов продукт и неговата стойност
+unset($prices['orange']); - Така премахвам портокалите от обекта $prices
+
+foreach ($prices as $product => $price){
+	echo "<p>$product costs $price</p>\n";
+} 
+
+strtoupper - Превръща всички букви в ГЛАВНИ.
+strtolower - :)
+
+strlen($text) - Ми дава дължината на текста.
+count($text) - Ми дава дължината на текста.
+
+ord($char) - Ми връща стойността на чара от ASCII таблицата.
+chr(65) - Ми връща буквата А.
+
+if (isset($letters[$char])) - Ако съществува тази буква...
+
+ksort($asoArr) - Сортира по ключове на асоциативен масив
+аsort($asoArr) - Сортира по стойностите на асоциативен масив
+uаsort($asoArr) - Сортира по стойностите на асоциативен масив с моя си функция
+uasort($arr, function ($a, $b) {
+    $first = is_array($a) ? max($a) : $a;
+    $second = is_array($b) ? max($b) : $b;
+    return $first - $second;
+});
+usort($asoArr) - Когато сортирам по мой си критерий.
+rsort($array) - Сортира масива в обратен ред.
+
+array_merge - Слива два масива и връща трети с всички елементи.
+
+implode('+',$arr) - Съединява елементите на масива с +. Като функцията join в javascript или string.Join в C#
+
+extract($people); -Изважда ключовете на асоциативен масив и ги прави променливи със стойността към тях.
+
+$array = array_fill(0,5,'Hello') - Пълни ми масив от 5 елемента с Hello.
+
+$str = <<<EOD
+Hi my name is Konstantin.
+What's up!!!
+EOD;
+echo $str; - Така си печатам променливата която е някакъв дълъг текст.
+
+echo strstr("This is madness!\n", "is ") ; // is madness!
+echo strstr("This is madness!", " is", true); // This 
+echo strpos($soliloquy, "that"); // 16
+var_dump(strpos($soliloquy, "nothing")); // bool(false)
+
+$str = "abcdef";
+echo substr($str, 1) ."\n";     // bcdef
+echo substr($str, -2) ."\n";    // ef
+echo substr($str, 0, 3) ."\n";  // abc
+echo substr($str, -3, 1);       // d 
+
+php $str = "Apples";
+echo $str[2]; // p 
+
+str_word_count($countries);  - Връща ми броят на думите в текст.
+
+count_chars($str)[ord('o')] - Връща броят букви 'о' в текст.
+
+$email = "bignakov@example.com";
+$newEmail = str_replace("bignakov", "juniornakov", $email);
+
+$text = "HaHAhaHAHhaha";
+$iReplace = str_ireplace("A", "o", $text); - Така е case insensitive
+
+echo var_export(explode(" ", "Hello how are you?"));
+// array ( 0 => 'Hello', 1 => 'how', 2 => 'are', 3 => 'you?', )
+
+echo var_export(preg_split("/[, ?]/", "Hello how are you?", -1, PREG_SPLIT_NO_EMPTY)); - Това сплитва и ми премахва празните елементи
+
+strcasecmp($string1, $string2) - Сравнява два стринга (case insensitive)
+strcmp("hELLo", "hello") - case sensitive
+
+\+\d{1,3}([ -]*[0-9]+)+ matches international phone
+
+$text = "csdvfabfdbfd f geh trjeyjeyje";
+$pattern =  '/[\w.+]+@\w+/';
+$count = preg_match_all($pattern, $text, $results);
+var_dump($results);
+foreach ($results[0] as $match){
+	echo "<p>$match</p>\n";
+}
+
+$text = "I love HTML, CSS, PHP and MySQL.";
+$tokens = preg_split("/\W+/", $text, -1, PREG_SPLIT_NO_EMPTY);
+echo json_encode($tokens);
+// ["I","love","HTML","CSS","PHP","and","MySQL"]
+
+$text = "S. Rogers    |  New York   |s_rogers@gmail.com \n" .
+  " Maria Johnson  |Seattle      |	 maria.j@gmail.com \n" .
+  "// This line is not in the correct format\n" . 
+  "Diana|V.Tarnovo|didi@abv.bg".
+$pattern = '/(.+?)\|(.+?)\|(.+)/';
+preg_match_all($pattern, $text, $results, PREG_SET_ORDER);
+foreach ($results as $match) {
+    $name = trim($match[1]); // first group
+    $town = trim($match[2]); // second group
+    $email = trim($match[3]); // third group
+    echo "name=$name town=$town email=$email\n";
+}
+
+$string = 'August 20, 2014';
+$pattern = '/(\w+) (\d+), (\d+)/';
+$replacement = '\2-\1-\3';
+echo preg_replace($pattern, $replacement, $string);
+// 20-August-2014
+
+$text = "April fools day is on 01/04/2013.\n" .
+    "Last Christmas was on 24/12/2013.\n";
+function nextYear($matches) {
+    return $matches[1] . ($matches[2] + 1);
+}
+echo preg_replace_callback(
+    '/(\d{2}\/\d{2}\/)(\d{4})/', "nextYear", $text);
+/* April fools day is on 01/04/2014.
+   Last Christmas was on 24/12/2014. */
+
+class Student {
+    public $name;
+    public $age;
+    public function __construct($name = null, $age = null) {
+        $this->name = $name;
+        $this->age = $age;
+    }
+}
+$peter = new Student("Peter", 21);
+echo $peter->name;
+$peter->age = 25;
+print_r($peter); // Student Object ( [name] => Peter [age] => 25 )
+$maria = new Student('Maria');
+print_r($maria); // Student Object ( [name] => Peter [age] => )
+
+$anonCat = new stdClass;
+$anonCat->weight = 14;
+echo 'My cat weighs ' . $anonCat->weight . ' kg.';
+// My cat weighs 14 kg.
+
+$person = new stdClass;
+$person->name = 'Chinese';
+$person->age = 43;
+$person->weapons = ['AK-47', 'M-16', '9mm-Glock', 'Knife'];
+echo json_encode($person);
+// {"name":"Chinese","age":43,"weapons":["AK-47","M-16","9mm-Glock","Knife"]}
+
+$obj = (object)['name' => 'Peter', 'age' => 25];
+$obj->twitter = '@peter';
+echo json_encode($obj);
+// {"name":"Peter","age":25,"twitter":"@peter"}
+
+is_string($str) -> 1 - Това означава, че е стринг.
+is_array , is_bool , is_integer , is_null , is_object , is_float
+
+printf("%.2f",3.14453); -> 3.14
+
+$blacklist = preg_split("/\s+/", $bl, -1, PREG_SPLIT_NO_EMPTY);
+$pattern = "/[a-zA-Z0-9_+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/";
+preg_match_all($pattern, $textArea, $matches);
+str_pad('', strlen($match), '*');
+preg_replace_callback($pattern, 'getReplacement', $text);
+function getReplacement($match){
+	$email = $match[0];
+	if (shouldBlacklist($eamil)){
+		return str_repeat("*", strlen($email));
+	} else {
+		return "<a href=\"mailto:$email\">$email</a>";
+	}
+startsWith($word, '*');
+
+<input type="text" name="XDEBUG_SESSION_START" value="16029" />
+
+ARRAY...........................................................................
+
+function returnItems(){
+	return ['eggs', 'milk'];
+}
+echo returnItems()[0]; -> eggs
+
+$myInfo = [
+    "Name" => "Konstantin",
+    "Age" => "33",
+];
+
+$myInfo = array("Name" => "Konstantin" , "PhoneNumber" => "0899947852", "City" => "Sofia");
+$myInfo["Name"] -> Konstantin - Така си взимам стойността стояща срещу ключ "Name"
+$moreInfo = array("Age" => "33");
+$myInfo = array_merge($myInfo, $moreInfo);
+foreach($myInfo as $key => $value){
+	echo $key. " " .$value."<br/>"
+}
+array_key_exists("Name", $myInfo) - Връща true или false
+$citySearch = array_search("Sofia", $myInfo) -> Sofia - Така търся по стойност от асоциативният масив
+
+print_r(array_keys($myInfo)); 
+print_r(array_values($myInfo));
+
+$customer1 = array("Name" => "Konstantin" , "PhoneNumber" => "0899947852", "City" => "Sofia");
+$customer2 = array("Name" => "Dido" , "PhoneNumber" => "0899947853", "City" => "Russe");
+
+$customers = array($customer1,$customer2); - Така създавам 2мерен масив (матрица)
+
+foreach($customers as $key)
+	foreach($key as $key2 => $value) - Така достъпвам информацията за всеки customer
+
+$arr = explode(",", $srt);
+$str = implode(",", $arr);
+in_array("Sofia", $countries) - Връща true или false
+
+print_r(array_reverse($countries,true));
+sort($countries, SORT_STRING);
+
+asort() - сортира стойностите
+rsort() - сортира на обратно
+arsort() - сортира стойностите на обратно
+ksort() - сортира ключовете
+krsort() - сортира ключовете на обратно
+
+$countArray = range(0,50); - Така си създавам масив с числа от 0 до 50
+count($countArray) - Ми дава бройката (дължината) на масива
+trim($arr);
+
+echo rand(1,100) - Ще ми отпечата едно число от 1 до 100. (напълно произволно)
+
+#Flatten a multidimensional array
+$array = [
+	'name' => {
+		'Your name is required',
+		'Your name cannot contain any number',
+		'inner' => [
+			'Some value'
+		]
+	],
+	'Dob' => [
+		'Your date of birth is required'
+	],
+	'password' => [
+		'Your password must be 6 characters or more',
+		'Your password isn\'t strong enough'
+	],
+	'String value'
+];
+$flattened = iterator_to_array(new RecursiveIteratorIterator(
+	new RecursiveArrayIterator($array)),flase);
+var_dump($flattened); - Тази функция ще ми изведе всички стрингове и ще ги подреди в един масив.
+
+function flatten_array(array $items, array $flattened = []){
+	foreach($items as $item){
+		if(is_array($item)){
+			$flattened = flatten_array($item, $flattened);
+			continue;
+		}
+		$flattened[] = $item;
+	}
+	return $flattened;
+}
+
+function average(){
+    return array_sum(func_get_args())/func_num_args();
+}
+print average(10, 15, 20, 25); // 17.5 - Тази функция ми намира средно аритметичната стойност на числата в масива.
+
+$a = array('green', 'red', 'yellow');
+$b = array('avocado', 'apple', 'banana');
+$c = array_combine($a, $b); -> [green]  => avocado    [red]    => apple   [yellow] => banana
+Тази функция взима стойностите от 1вият масив и ги прави ключове на 2рият.
+
+$array = array("size" => "XL", "color" => "gold");
+print_r(array_values($array)); -> [0] => XL    [1] => gold - Тази функция ми вади стойностите от асоциативен масив.
+
+$array = array("color" => array("blue", "red", "green"),
+"size"  => array("small", "medium", "large"));
+print_r(array_keys($array)); -> [0] => color    [1] => size - Тази функция ми вади ключовете от асоциативен масив.
+
+array_key_exists('first', $array)) - Проверява дали ключът first съществува. Връща true или false.
+
+$array = array(1, "hello", 1, "world", "hello");
+print_r(array_count_values($array)); -> [1] => 2  [hello] => 2  [world] => 1
+Връща асоциативен масив със стойности от параметъра input като ключове и техния брой като стойности.
+
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "green", "yellow", "red");
+$result = array_diff_assoc($array1, $array2); -> [b] => brown    [c] => blue    [0] => red
+Връща масив, съдържащ всички стойности от array1 , които не присъстват в никой от другите масиви.
+
+$array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4);
+$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8);
+var_dump(array_diff_key($array1, $array2)); -> ["red"]=>  int(2)  ["purple"]=>  int(4)
+Връща масив съдържащ всички ключове от array1 , които не присъстват в никой от другите масиви
+
+$trans = array("a" => 1, "b" => 1, "c" => 2);
+$trans = array_flip($trans); -> [1] => b  [2] => c
+array_flip() връща масив с разменена поредност, т.е. ключовете от trans стават стойности, а стойностите от trans стават ключове. 
+
+function cube($n){
+    return($n * $n * $n);
+}
+$a = array(1, 2, 3, 4, 5);
+$b = array_map("cube", $a); -> [0] => 1    [1] => 8    [2] => 27   [3] => 64    [4] => 125
+Връща масив, съдържаш всички елементи на arr1 , след прилагането на функция callback върху всеки от тях.
+
+$a = array(2, 4, 6, 8);
+echo "произведение(a) = " . array_product($a) . "\n"; -> 384 - Връща произведението във вид на цяло число или число с плаваща запетая. 
+
+$base = array("orange", "banana", "apple", "raspberry");
+$replacements = array(0 => "pineapple", 4 => "cherry");
+$replacements2 = array(0 => "grape");
+$basket = array_replace($base, $replacements, $replacements2); ->[0] => grape    [1] => banana    [2] => apple    [3] => raspberry    [4] => cherry
+Заменя стойностите от 1вия със стойностите от 2рия
+
+$array = array(0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red');
+$key = array_search('green', $array); // $key = 2;
+$key = array_search('red', $array);   // $key = 1;- Връща ключовете на намерените стойности
+
+$input = array("a", "b", "c", "d", "e");
+$output = array_slice($input, 2);      // returns "c", "d", and "e"
+$output = array_slice($input, -2, 1);  // returns "d"
+$output = array_slice($input, 0, 3);   // returns "a", "b", and "c"
+
+$input = array("red", "green", "blue", "yellow");
+array_splice($input, 3, 0, "purple"); // $input is now array("red", "green", "blue", "purple", "yellow");
+Така мога да вкарвам елемент на дадена позиция в масива.
+
+array_sum($a) - сумира стойностите на нормален или асоциативен масив.
+
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "GREEN", "B" => "brown", "yellow", "red");
+print_r(array_uintersect_uassoc($array1, $array2, "strcasecmp", "strcasecmp")); -> [a] => green   [b] => brown
+Изчислява сечението на масиви с допълнителна проверка на индекса, сравнявайки данните и индексите посредством 
+функция за обратно извикване.Забележете, че за разлика от функция array_uintersect(), тук при сравняването се
+използват ключовете. Данните и индексите се сравняват посредством две отделни функции за обратно извикване. 
+
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "GREEN", "B" => "brown", "yellow", "red");
+print_r(array_uintersect($array1, $array2, "strcasecmp")); -> [a] => green    [b] => brown    [0] => red
+Връща масив съдържащ всички стойности от array1 , чийто стойности съществуват във всеки един от параметрите.
+
+•current() - Връща текущия елемент на масива == post()
+•each() - Връща текущата двойка ключ/стойност на масива и премества указателя му
+•prev() - Премества вътрешния указател на масива с една позиция назад
+•reset() - Установява вътрешния указател на масива на първия му елемент
+•next() - Премества вътрешния указател на масива с една позиция напред
+
+key($array) - Връща ключа от масива.
+
+natcasesort($array2); сортира в естествена подредба
+natsort($array2); сортира в естествена подредба като запазва ключовете
+
+range(0, 12) -> array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+range(0, 100, 10) -> array(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+range('a', 'i') -> array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i');
+range('c', 'a') -> array('c', 'b', 'a');
+
+
+End of ARRAY...................................................................
+
+REGEX..........................................................................
+
+#.^*+?{}[]\|() - тези символи трябва да се escape (\).
+
+[(\d)]+ -> (2) (12) (21) -> 2, 12, 21
+
+<a\s+([^>]?)*href\s*=\s*(["|'])*([\w\W]+?)(?=\2|[]\s|>]{1})
+
+$matchName = preg_grep("/Konstantin/", $randomArray);
+foreach($matchName as $result){
+	echo $result;
+}
+"p* 1 " -> preg_grep("/\w*\b\d\s$/", $randomArray);
+$ - end of string
+^ - begining of string
+"<p>Random Text</p>" -> preg_grep("/<.*?>\s*(.*?)\s*<.*?>/", $randomArray);
+"Jen","Jennifer", "Jenny" -> preg_grep("/Jen[ny|nifer]*/", $randomArray);
+"$1,234" -> preg_grep('/\$\d{1,3}[,]?\d{1,3}/', $randomArray);
+"konstantin1230@yahoo.com" -> preg_grep('/[\w.\%-]+@[\w.-]+\.[A-Za-z]{2,4}/', $randomArray);
+"(416)-509-0281" -> preg_grep('/\(?[0-9]{3}\)?-?[0-9]{3}[-. ]?[0-9]{4}/', $randomArray);
+"12/12/2015", "12-12-2015" -> preg_grep("/(\d+)[\/-](\d+)[\/-](\d+)/") , $randomArray);
+("Turtle3Dove") $passwordArray = preg_grep(‘%\A(?=[-_a-zA-Z0-9]*?[A-Z])(?=[-_a-zA-Z0-9]*?[a-z])(?=[-_a-zA-Z0-9]*?[0-9])\S{6,}\z%’, $randomArray);
+"Mailman" -> preg_grep("/^mail(?!woman)/i") , $randomArray);
+"Mailwoman" -> preg_grep("/(?<=mail)woman/i") , $randomArray);
+
+End of REGEX....................................................................
+
+STRING.........................................................................
+
+$randomStr = “Mailman Mailwoman Jennifer Jenny Jen Doctor Doug Dog”;
+
+# Find different versions of the name Jennifer
+ preg_match_all('/Je[nifery]{1,6}/', $randomStr, $matchName); - тази функция matchва в стринг
+
+foreach($matchName as $result){
+    foreach($result as $found){
+    echo $found . “<br /><br />”;
+    }
+}
+
+# Replace the Regex with something else using preg_replace
+ $randStr = “Dick and Jane fetched a bucket of water”;
+echo preg_replace(“/Dick/”, “Paul”, $randStr). “<br /><br />”;
+echo str_replace("Jane", "Erica" , $randStr);
+
+# Returning part of a string
+ echo substr($randStr,9,4) . “<br />”; -> Jane
+
+# Return the position of the substring
+ echo strpos($randStr, “fetched”). “<br />”; -> 14 (позиция в стринга)
+
+# Split a string based off a Regex with preg_split
+ $chairPpl = “John Thompson (CEO) Mark Summers (CFO) Betty Wu (CTO)“;
+ $noTitle = preg_split(“%\s\(.{3}\)\s?%”, $chairPpl, -1, PREG_SPLIT_NO_EMPTY);
+
+# Compare strings
+ $strOne = “Doctor Jay”;
+ $strTwo = “Doctor Jay”;
+ $strThree = “he went there”;
+
+# Returns neg number if strOne < strTwo, 0 if equal, else a positive number
+ echo strcmp($strOne,$strTwo). “<br />”;
+ echo strcasecmp($strOne,$strTwo). “<br />”; - това сравнение е case insensitive
+
+# Changing String Case
+ echo ucfirst($strThree) . “<br />”; - 1вата буква става главна
+ echo ucwords($strThree) . “<br />”; - Всяка 1ва буква на всяка дума става главна
+ echo strtolower($strOne) . “<br />”;
+ echo strtoupper($strOne) . “<br />”;
+
+trim() , ltrim() -от ляво , rtrim() - от дясно
+
+# Strip HTML Tags
+ $htmlText = “<head><title>My Web Page</title></head>”;
+echo strip_tags($htmlText) . “<br />”; -> My Web Page - Премахва всички тагове.
+
+$name = 'Alex';
+echo 'Hello', $name ,'!';
+echo "Hello $name!";
+echo "Hello".$name."!";
+
+$str = "How many words do I have?";
+echo str_word_count($str); -> 6 - Тази функция ми дава бройката на думите в изречението
+
+similar_text($string1, $string2, $percent);   - $percent ми дава колко процента двата стринга са еднакви.
+
+strpos(string, find, start); - Намира позицията на буква или дума в стринг.
+
+strstr('Hi What', 'Hi'); -> Проверява 2рия стринг дали се съдържа във 1вия и връща 1вият ако е true.
+
+substr($str, start, length)
+
+wordwrap($str, width, break, cut) - тази функция реже стринга. Също така мога на определено място в стринга да слагам стринг.
+
+ 
+
+End of STRING..................................................................
+
+$url = 'https://www.youtube.com/watch?v=S039FccN_Mk&list=PLBC2EFDE1797BC81F&index=5';
+$parsedUrl = parse_url($url); - Тази функция ми изкарва в масив цялата информация от url.
+echo '<pre>', print_r($parsedUrl, true), '</pre>';
+
+
+function getUser(){
+	return [
+		'Billy',
+		'billy@codecourse.com',
+		new DateTime('1st February 1994')
+	];
+};
+list($username, $email, $dob) = getUser();
+echo $dob->format('d'); -> 01
+
+is_array($arr), is_string($str), is_integer($int)
+
+echo '<pre>', print_r($person, true), '</pre>'; - това форматира изхода по разбираем начин. Използва се при multidimensional arrays.
+
+if(($index+1) !== count($names)){
+	echo '<br>'; - Това ще сложи нов ред на всички елементи без последният.
+}
+
+$name = htmlentities($_POST['name'], ENT_QUOTES, 'UTF-8');
+
+$string = json_encode($myvar);
+$newvar = json_decode($string);
+
+
+
+
+
+
+
+
+ 

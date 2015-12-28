@@ -1,0 +1,261 @@
+.background-image {
+    width: 100%;
+    height: 700px;
+
+    margin: 0 auto;
+
+    left: 0;
+    right: 0;
+    top: 100px;
+
+    z-index: 1;
+
+    display: block;
+    position: absolute;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    background-image: url("../Images/img0.jpg");
+}
+
+#wrapper > section > section.releases-preview {
+    width: 900px;
+    height: 300px;
+
+    margin: 20px auto;
+
+    border: 1px solid #000;
+}
+
+#wrapper > section > section.releases-preview > img {
+    width: 100%;
+    height: 100%
+}
+
+#wrapper > section > section.content-wrapper {
+    width: 900px;
+
+    margin: 0 auto 70px auto;
+}
+
+#wrapper > section > section > section.album-section {
+    width: 600px;
+
+    float: left;
+    
+    margin: 0 auto;
+}
+
+#wrapper > section > section > section.album-section > p {
+    width: 100%;
+
+    color: #FFF;
+    text-align: center;
+
+    border-bottom: 1px solid #FFF;
+}
+
+#wrapper > section > section > section.album-section > a > div.album {
+    width: 150px;
+    height: 190px;
+
+    float: left;
+
+    margin: 10px 20px;
+
+    border: 1px solid white;
+}
+
+#wrapper > section > section > section.album-section > a > div.album > img {
+    width: 100%;
+    height: 150px;
+}
+
+#wrapper > section > section > section.album-section > a > div.album > p {
+    width: 100%;
+    height: 40px;
+
+    font-size: 12px;
+    padding-top: 5px;
+    margin: 0;
+
+    color: #FFF;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+#wrapper > section > section > section.album-section::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#wrapper > section > section > aside.top-ten-chart {
+    width: 270px;
+
+    float: left;
+
+    margin: 0 0 10px 25px;
+}
+
+#wrapper > section > section > aside.top-ten-chart > p {
+    width: 100%;
+
+    color: #FFFFFF;
+    text-align: center;
+
+    border-bottom: 1px solid #FFF;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track {
+    width: 100%;
+    height: 50px;
+
+    margin: 10px auto;
+
+    border: 1px solid #FFF;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside {
+    width: 10%;
+    height: 100%;
+
+    float: left;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside > div {
+    height: 100%;
+
+    padding: 4px;
+    box-sizing: border-box;
+
+    border-right: 1px solid #FFF;
+    background-color: #696969;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside > div > input {
+    width: 20px;
+
+    border: none;
+    background-color: transparent;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside > div > input.playlist {
+    cursor: pointer;
+    border-radius: 50px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../Images/plus-sign.png");
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside > div > input.playlist:hover,
+#wrapper > section > section > aside.top-ten-chart > div.track > aside > div > input.cart:hover {
+    background-color: greenyellow;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside > div > input.cart {
+    margin-top: 10px;
+    border-radius: 50px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../Images/shop-cart.png");
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track >div.song-info {
+    width: 60%;
+    float: left;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > div.song-info:hover > a > p {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.likes {
+    width: 10%;
+    float: left;
+}
+
+.likes > span {
+    color: #FFF;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.likes > input[type="button"] {
+    display: block;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > div > a {
+    text-decoration: none;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > div > a > p {
+    color: #FFF;
+
+    margin: 5px;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > div.likes > input[type="button"] {
+    width: 100%;
+    height: 50%;
+    float: right;
+
+    border: none;
+    background-color: transparent;
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../Images/like.png");
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > a {
+    width: 11%;
+    height: 50%;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+
+    border: none;
+    background-color: transparent;
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../Images/like.png");
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > a {
+    background-image: url("../Images/download.png");
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > div.likes > input[type="button"]:hover {
+    background-color: red;
+    margin: 0;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > a:hover {
+    background-color: greenyellow;
+    margin: 10px 10px 10px 0;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+#wrapper > section > section::after {
+    content: '';
+    clear: both;
+    display: block;
+}

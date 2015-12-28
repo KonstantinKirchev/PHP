@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Welcome To Seoul Beatz</title>
+
+    <link rel="stylesheet" href="Styles/login-registration.css"/>
+</head>
+<body>
+    <div class="background-image" id="background"></div>
+    <div id="wrapper">
+        <section class="registration">
+            <form action="registration.php" method="get">
+                <ul>
+                    <li>
+                        <label for="username-reg">Username</label>
+                        <input type="text" id="username-reg" pattern="^[a-z0-9_-]{3,15}$" required />
+                    </li>
+                    <li>
+                        <label for="password-reg">Password</label>
+                        <input type="password" id="password-reg" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" required />
+                    </li>
+                    <li>
+                        <label for="password-repeat-reg">Confirm Password</label>
+                        <input type="password" id="password-repeat-reg" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" required />
+                    </li>
+                    <li>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$;" required />
+                    </li>
+                    <li>
+                        <input type="submit" name="submit" />
+                    </li>
+                </ul>
+            </form>
+        </section>
+        <section class="login">
+            <form action="login.php" method="get">
+                <ul>
+                    <li>
+                        <label for="username-login">Username</label>
+                        <input type="text" id="username-login" required=""/>
+                    </li>
+                    <li>
+
+                        <label for="password-login">Password</label>
+                        <input type="password" id="password-login" required=""/>
+                    </li>
+                    <li>
+                        <input type="submit" name="submit"/>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('background').style.height = window.innerHeight;
+        document.getElementById('wrapper').style.height = window.innerHeight - 30;
+    </script>
+</body>
+</html>

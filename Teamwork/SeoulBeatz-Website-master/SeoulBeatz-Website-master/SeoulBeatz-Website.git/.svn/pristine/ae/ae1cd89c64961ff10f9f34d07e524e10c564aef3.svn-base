@@ -1,0 +1,58 @@
+<?php
+
+function connectDB() {
+    $servername = "sql3.freemysqlhosting.net:3306";
+    $username = "sql374186";
+    $password = "yE3%mI4!";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password);
+    $conn->select_db('sql374186');
+
+    return $conn;
+}
+
+function registerUser($usrName, $usrPassword, $usrEmail, $date) {
+    $conn = connectDB();
+
+    if (!$conn->connect_error) {
+        $usrPassword = md5($usrPassword);
+        $query = "INSERT INTO Users VALUES('$usrName', '$usrPassword', '$usrEmail', '$date', '');";
+
+        $queryResult = mysqli_query($conn, $query)
+            or die(mysqli_error($conn));
+
+        $conn->close();
+
+        session_start();
+        $_SESSION['username'] = $usrName;
+        session_write_close();
+
+        header("Location: ../home.php");
+
+    } else {
+        header("Location: ../index.php");
+    }
+}
+
+function checkExistance($value, $column) {
+    $conn = connectDB();
+
+    if (!$conn->connect_error) {
+        $query = "SELECT * FROM Users WHERE '$column' = '$value';";
+        var_dump($query);
+        $queryResult = mysqli_query($conn, $query)
+            or die(mysqli_error($conn));
+        var_dump($queryResult);
+        $conn->close();
+
+        if (count($queryResult) != 0) {
+            return true;
+        }
+
+        return false;
+    } else {
+        header("Location: ../index.php");
+        return false;
+    }
+}

@@ -1,0 +1,142 @@
+.background-image {
+    width: 100%;
+
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+
+    display: block;
+
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+
+    position: fixed;
+
+    background-size: cover;
+    background-image: url("../Images/login-background.jpg");
+
+}
+
+#wrapper > section.content-wrapper > section.chart {
+    width: 80%;
+
+    z-index: 2;
+    position: relative;
+    margin: 100px auto;
+
+    border: 1px solid #FFFFFF;
+
+    background-color: rgba(100, 100, 100, 0.5);
+}
+
+#wrapper > section.content-wrapper > section.chart > p {
+    width: 100%;
+    height: 30px;
+    color: #FFF;
+
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+
+    margin: 0 auto;
+    padding: 5px;
+
+    box-sizing: border-box;
+    border-bottom: 1px solid #FFF;
+}
+
+#wrapper > section.content-wrapper > section.chart > div.track {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #FFF;
+    box-sizing: border-box;
+}
+
+#wrapper > section.content-wrapper > section.chart > div.track > input {
+    width: 20px;
+    height: 20px;
+
+    padding: 5px;
+    margin: 15px 5px 0;
+
+    border: none;
+    background-color: transparent;
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../Images/play-icon.png");
+}
+
+#wrapper > section.content-wrapper > section.chart > div.track > p {
+    height: 100%;
+
+    color: #FFF;
+    line-height: 50px;
+
+    vertical-align: middle;
+
+    margin: 0 10px;
+    display: inline-block;
+
+    border-right: 1px solid #FFF;
+}
+
+#wrapper > section.content-wrapper > section.chart > div.track > p.song-title {
+    width: 70%;
+}
+
+#wrapper > section.content-wrapper > section.chart > div.track > p.song-genre {
+    width: 10%;
+}
+
+#wrapper > section.content-wrapper > section.chart > div.track > p.song-length {
+    width: 5%;
+    border-right: none;
+}
+
+#wrapper > section.player {
+    width: 100%;
+    height: 50px;
+
+    bottom: 0;
+    z-index: 3;
+    position: fixed;
+
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#wrapper > section.player > img {
+    width: 5%;
+    height: 90%;
+
+    margin: 4px;
+
+    float: left;
+}
+
+#wrapper > section.player > div.song-info {
+    width: 60%;
+
+    float: left;
+}
+
+#wrapper > section.player > div.song-info > p {
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 5px 10px;
+}
+
+#wrapper > section.player > progress {
+    width: 10%;
+
+    margin: 20px;
+}
+
+#wrapper > section.player > div.lendth {
+
+}
+
+#wrapper > footer {
+    margin-bottom: 50px;
+}

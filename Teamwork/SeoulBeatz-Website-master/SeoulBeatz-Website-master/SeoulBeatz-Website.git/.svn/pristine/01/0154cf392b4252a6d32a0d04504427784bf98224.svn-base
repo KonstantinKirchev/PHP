@@ -1,0 +1,175 @@
+.background-image {
+    width: 100%;
+    height: 700px;
+
+    margin: 0 auto;
+
+    left: 0;
+    right: 0;
+    top: 100px;
+
+    z-index: 1;
+
+    display: block;
+    position: absolute;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    background-image: url("../Images/img0.jpg");
+}
+
+#wrapper > section > section.releases-preview {
+    width: 900px;
+    height: 300px;
+
+    margin: 20px auto;
+
+    border: 1px solid #000;
+}
+
+#wrapper > section > section.releases-preview > img {
+    width: 100%;
+    height: 100%
+}
+
+#wrapper > section > section.content-wrapper {
+    width: 900px;
+
+    margin: 0 auto;
+}
+
+#wrapper > section > section > section.album-section {
+    width: 600px;
+
+    float: left;
+    
+    margin: 0 auto;
+}
+
+#wrapper > section > section > section.album-section > p {
+    width: 100%;
+
+    color: #FFF;
+    text-align: center;
+
+    border-bottom: 1px solid #FFF;
+}
+
+#wrapper > section > section > section.album-section > div.album {
+    width: 150px;
+    height: 180px;
+
+    float: left;
+
+    margin: 10px 20px;
+
+    border: 1px solid white;
+}
+
+#wrapper > section > section > section.album-section > div.album > img {
+    width: 100%;
+    height: 150px;
+}
+
+#wrapper > section > section > section.album-section > div.album > p {
+    width: 100%;
+    height: 25px;
+
+    padding: 5px;
+    margin: 0;
+
+    color: #FFF;
+    text-align: center;
+
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+#wrapper > section > section > aside.top-ten-chart {
+    width: 270px;
+
+    float: left;
+
+    margin: 0 0 10px 25px;
+}
+
+#wrapper > section > section > aside.top-ten-chart > p {
+    width: 100%;
+
+    color: #FFFFFF;
+    text-align: center;
+
+    border-bottom: 1px solid #FFF;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track {
+    width: 100%;
+    height: 50px;
+
+    margin: 10px auto;
+
+    border: 1px solid #FFF;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside {
+    width: 10%;
+    height: 100%;
+
+    float: left;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside > form {
+    height: 100%;
+
+    padding: 4px;
+    box-sizing: border-box;
+
+    border-right: 1px solid #FFF;
+    background-color: #696969;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside > form > input {
+    width: 20px;
+
+    border: none;
+    background-color: transparent;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside > form > input.playlist {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../Images/plus-sign.png");
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > aside > form > input.cart {
+    margin-top: 10px;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../Images/shop-cart.png");
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > div {
+    float: left;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track > div > p {
+    color: #FFF;
+
+    margin: 5px;
+}
+
+#wrapper > section > section > aside.top-ten-chart > div.track::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+#wrapper > section > section::after {
+    content: '';
+    clear: both;
+    display: block;
+}

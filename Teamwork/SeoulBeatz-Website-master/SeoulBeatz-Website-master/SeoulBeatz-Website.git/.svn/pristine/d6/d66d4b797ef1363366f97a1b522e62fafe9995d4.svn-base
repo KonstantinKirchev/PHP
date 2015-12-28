@@ -1,0 +1,81 @@
+<?php ob_start(); session_start();?>
+<html>
+<head>
+    <title>Charts</title>
+
+    <link rel="stylesheet" href="Styles/basic-template.css"/>
+    <link rel="stylesheet" href="Styles/charts.css"/>
+
+    <?php include 'App_Code/userOperations.php'; ?>
+    <?php include 'App_Code/chartView.php' ?>
+</head>
+<body>
+    <div class="background-image" id="background"></div>
+    <div id="wrapper">
+        <header>
+            <img src="Images/site-logo.png" alt="img is here"/>
+            <div>
+                <span> <?php getUsername(); ?> </span>
+                <div>
+                    <!-- hidden menu-->
+                    <a href="charts.php"><p>Charts</p></a>
+                    <a href="#" class="middle"><p>My Playlists</p></a>
+                    <a href="#"><p>Log Out</p></a>
+                </div>
+            </div>
+            <form action="search.php" method="post">
+                <input type="search" name="search" id="search"/>
+                <input type="submit" name="submit" value="Search"/>
+            </form>
+        </header>
+
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="home.php">HOME</a></li>
+                    <li class="current-page"><a href="charts.php">CHART</a>
+                        <ul>
+                            <li><a href="#">Dance</a></li>
+                            <li><a href="#">Hip - Hop</a></li>
+                            <li><a href="#">Rock</a></li>
+                        </ul>
+                    </li> <!-- Submenu -->
+                    <li><a href="#">PLAYLISTS</a></li>
+                    <li><a href="#">CONTACTS</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="content-wrapper">
+            <?php
+                content();
+            ?>
+        </section>
+
+        <section class="player">
+            <img src="Images/test-album-cover.jpg" alt="Album Art"/>
+            <div class="song-info">
+                <p>Song Title Some Times Is Really Long Just Like Now</p>
+                <p>Short Artist Name</p>
+            </div>
+            <progress>
+
+            </progress>
+            <div class="lendth">
+                <p>1:23 / 3:25</p>
+            </div>
+            <div class="contorls">
+
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('background').style.height = window.innerHeight;
+    </script>
+</body>
+</html>

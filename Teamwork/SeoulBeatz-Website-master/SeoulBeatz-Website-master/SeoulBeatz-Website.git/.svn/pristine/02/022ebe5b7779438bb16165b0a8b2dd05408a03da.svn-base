@@ -1,0 +1,85 @@
+.background-image {
+    width: 100%;
+
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+
+    display: block;
+
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+
+    position: fixed;
+
+    background-size: cover;
+    background-image: url("../Images/login-background.jpg");
+
+}
+#ret_cmsUpl {
+    margin-left: 372px;
+    margin-bottom: 13px;
+    text-align: center;
+    width: 156px;
+    height: 25px;
+    background-color: coral;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 3px;
+}
+#wrapper > section.content {
+    width: 900px;
+    margin: 100px auto;
+
+    border: 1px solid #FFF;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#wrapper > section.content > p {
+    text-align: center;
+    color: #FFFFFF;
+
+    margin: 5px
+    font-size: 24px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+#wrapper > section.content > form {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#wrapper > section.content > form > label {
+    width: 10%;
+    display: inline-block;
+    color: #9fe400;
+    margin: 10px;
+    text-align: end;
+}
+
+#wrapper > section.content > form > input[type="text"] {
+    width: 80%;
+    color: yellowgreen;
+    padding: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#wrapper > section.content > form > input[type="file"] {
+    width: 35%;
+    color: #9fe400;
+    vertical-align: super;
+}
+
+#wrapper > section.content > form > input[type="submit"] {
+    width: 100%;
+    color: #FFF;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #9fe400;
+}

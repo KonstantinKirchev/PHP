@@ -1,0 +1,190 @@
+.background-image {
+    width: 100%;
+    height: 1150px;
+
+    margin: 0 auto;
+
+    left: 0;
+    right: 0;
+    top: 100px;
+
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+
+    z-index: 1;
+
+    display: block;
+    position: absolute;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../Images/login-background.jpg");
+}
+
+#contacts {
+    padding-bottom: 360px;
+    color: #fff;
+}
+section .inner {
+    max-width: 1253px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+section header {
+    margin-top: 144px;
+    margin-bottom: 120px;
+}
+section header h2 {
+     font-family: 'Source Sans Pro', sans-serif;
+     font-size: 48px;
+     line-height: 48px;
+     text-shadow: 0 1px 0 #fff;
+     text-transform: uppercase;
+     text-align: left;
+     letter-spacing: 3px;
+     font-weight: 700;
+     -webkit-font-smoothing: antialiased;
+     padding: 0 20px;
+ }
+#contacts .content {
+    margin: 0 20px;
+}
+#contacts .contact-form {
+    margin-right: 32px;
+}
+#contacts .member-link {
+    margin-right: 32px;
+}
+#contacts .left {
+    text-align: left;
+    display: inline-block;
+    float: left;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#contacts .left h3 {
+    font-size: 36px;
+    line-height: 36px;
+    margin: 0;
+}
+#contacts .left .address {
+    margin-top: 48px;
+    font-size: 19px;
+    line-height: 29px;
+}
+#contacts .left .mobile {
+    margin-top: 24px;
+    font-size: 19px;
+    line-height: 29px;
+}
+#contacts a {
+    color: #fff;
+    font-size: 19px;
+    line-height: 29px;
+    padding-bottom: 3px;
+    text-decoration: none;
+    border-bottom: 1px solid #9fe400;
+}
+#contacts .left .email {
+    margin-top: 24px;
+}
+#contacts .left .social {
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+#contacts .content .end {
+    margin-right: 0;
+    float: right;
+}
+#contacts .left .social a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 35px;
+    margin-right: 5px;
+    padding: 0;
+    border: none;
+}
+
+#wrapper > section > nav.nav {
+    margin-top: 50px;
+}
+
+#contacts .left .social a:hover {
+    color: #9fe400;
+}
+section .content .half {
+    display: inline-block;
+    vertical-align: top;
+    letter-spacing: normal;
+    word-spacing: normal;
+    width: 49%;
+    margin-right: 2%;
+}
+#contacts .contact-form .input, #contacts .contact-form textarea {
+    border: 0;
+    color: rgb(161, 161, 161);
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 19px;
+    line-height: 29px;
+    padding: 5px;
+    margin-bottom: 20px;
+    color: #fff;
+    width: 100%;
+    border: 1px solid transparent;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+}
+#contacts .contact-form .input:focus, #contacts .contact-form textarea:focus {
+    outline: none;
+    border: 1px solid #9fe400;
+    -webkit-box-shadow: 0 0 8px #9fe400;
+    -moz-box-shadow: 0 0 8px #9fe400;
+    box-shadow: 0 0 8px #9fe400;
+}
+#contacts .contact-form textarea {
+    min-height: 200px;
+}
+#contacts .contact-form .button {
+    border: 0;
+    background: #9fe400;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #222;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px 25px 9px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    float: right;
+    -webkit-transition: background 0.3s ease;
+    -moz-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 0px #997a00, inset 0 -1px 0 rgba(255, 255, 255, 0.15), 0 6px 6px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 0px #997a00, inset 0 -1px 0 rgba(255, 255, 255, 0.15), 0 6px 6px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 0px #997a00, inset 0 -1px 0 rgba(255, 255, 255, 0.15), 0 6px 6px 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+#contacts .contact-form #response {
+    display: block;
+    float: left;
+}
+#contacts .contact-form #response p {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 15px;
+    width: 250px;
+}
+#contacts .contact-form .spam-filter {
+    display: block;
+}
+#contacts .member-link {
+    text-align: right;
+    margin-top: 80px;
+    margin-bottom: 5px;
+}

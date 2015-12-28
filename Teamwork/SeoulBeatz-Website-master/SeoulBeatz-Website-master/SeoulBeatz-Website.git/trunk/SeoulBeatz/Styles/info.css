@@ -1,0 +1,292 @@
+.background-image {
+    width: 100%;
+
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+
+    display: block;
+
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+
+    position: fixed;
+
+    background-size: cover;
+    background-image: url("../Images/login-background.jpg");
+
+}
+
+#wrapper > section#content-wrapper {
+    width: 900px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+#content-wrapper > div.track {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+
+    z-index: 2;
+    position: relative;
+}
+
+#content-wrapper > div.track > img {
+    width: 300px;
+    height: 300px;
+
+    float: left;
+}
+
+#content-wrapper > div.track > p {
+    width: 55%;
+    margin: 5px;
+
+    float: left;
+
+    color: #FFF;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#content-wrapper > div.track > p > span {
+    width: 80px;
+    display: inline-block;
+    text-align: end;
+
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#content-wrapper > div.track > a,
+#content-wrapper > div.track > input[type="button"] {
+    float: left;
+    color: white;
+    text-decoration: none;
+
+    padding: 5px;
+    margin-top: 107px;
+    margin-left: 5px;
+
+    border: none;
+    border-radius: 10px;
+    background-color: yellowgreen;
+}
+
+#content-wrapper > div.track > input[type="button"].add-playlist{
+    width: 150px;
+    height: 28px;
+    background-image: none;
+    background-color: yellowgreen;
+}
+
+#content-wrapper > div.track > input[type="button"] {
+    width: 5%;
+    background-color: red;
+    height: 30px;
+    background-size: 90% 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../Images/like.png");
+}
+
+#content-wrapper > div.track > input[type="button"]:hover {
+    cursor: pointer;
+    color: #9fe400;
+    background-color: #ffffff;
+}
+
+#content-wrapper > div.track > a:hover {
+    color: yellowgreen;
+    background-color: white;
+}
+
+#content-wrapper > div.track::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#content-wrapper > div.comment {
+    width: 90%;
+    margin: 10px auto;
+    border: 1px solid #FFF;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#content-wrapper > div.comment > p {
+    color: #9fe400;
+}
+
+#content-wrapper > div.comment > p.text,
+#content-wrapper > div.comment > input {
+    margin: 10px;
+}
+
+#content-wrapper > div.comment > p.publish-info {
+    margin: 10px;
+    font-size: 11px;
+    text-align: end;
+}
+
+#content-wrapper > div.comment > p.publish-info > span {
+    color: #FFF;
+    font-style: italic;
+}
+
+#content-wrapper > div.comment > form > textarea {
+    width: 97%;
+    color: #9fe400;
+    resize: none;
+
+    margin: 10px;
+
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#content-wrapper > div.comment > form > textarea:focus {
+    outline: #fff solid thin;
+}
+
+#content-wrapper > div.comment > form > input {
+    width: 15%;
+    float: right;
+    margin: 5px 10px;
+    border: none;
+    background-color: yellowgreen;
+    border-radius: 50px;
+    padding: 5px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+#content-wrapper > div.comment > form > span {
+    color: #FFF;
+    margin: 20px 10px;
+}
+
+audio {
+    width: 55%;
+    margin: 20px 5px;
+}
+
+#content-wrapper > div.comment::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#content-wrapper > section.chart {
+    width: 80%;
+
+    z-index: 2;
+    position: relative;
+    margin: 100px auto;
+
+    border: 1px solid #FFFFFF;
+
+    background-color: rgba(100, 100, 100, 0.5);
+}
+
+#content-wrapper > section.chart > p {
+    width: 100%;
+    height: 30px;
+    color: #FFF;
+
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+
+    margin: 0 auto;
+    padding: 5px;
+
+    box-sizing: border-box;
+    border-bottom: 1px solid #FFF;
+}
+
+#content-wrapper > section.chart > p > span {
+    color: #9fe400;
+}
+
+#content-wrapper > section.chart > div.track {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #FFF;
+    box-sizing: border-box;
+}
+
+#content-wrapper > section.chart > div.track > input {
+    width: 20px;
+    height: 20px;
+
+    padding: 5px;
+    margin: 15px 5px 0;
+
+    border: none;
+    background-color: transparent;
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#content-wrapper > section.chart > div.track > input.paused {
+    background-image: url("../Images/play-icon.png");
+}
+
+#content-wrapper > section.chart > div.track > input.playing {
+    background-image: url("../Images/pause-icon.png");
+}
+
+#content-wrapper > section.chart > div.track > p {
+    height: 100%;
+
+    color: #FFF;
+    line-height: 50px;
+
+    vertical-align: middle;
+
+    margin: 0 10px;
+    display: inline-block;
+
+    border-right: 1px solid #FFF;
+}
+
+#content-wrapper > section.chart > div.track > p.song-title {
+    width: 70%;
+}
+
+#content-wrapper > section.chart > div.track > p.song-genre {
+    width: 10%;
+}
+
+#content-wrapper > section.chart > div.track > p.song-length {
+    width: 5%;
+    border-right: none;
+}
+
+#content-wrapper > div.track > audio.player {
+    display: inline-block;
+}
+
+.joke {
+    color: #FFF;
+    text-align: center;
+    margin-top: 50px;
+    border-bottom: 1px solid #FFF;
+}
+
+.result-table {
+    border: 1px solid #FFF;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 24px;
+    padding: 10px;
+    color: yellowgreen;
+    font-weight: bold;
+}

@@ -1,0 +1,80 @@
+.background-image {
+    width: 100%;
+
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+
+    display: block;
+
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+
+    position: fixed;
+
+    background-size: cover;
+    background-image: url("../Images/login-background.jpg");
+
+}
+
+#wrapper > section.content-wrapper {
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+#wrapper > section > section.content-wrapper {
+    width: 900px;
+
+    margin: 0 auto 70px auto;
+}
+
+#wrapper > section > section > section.album-section {
+    width: 100%;
+
+    float: left;
+
+    margin: 0 auto;
+}
+
+#wrapper > section > section > section.album-section > p {
+    width: 100%;
+
+    color: #FFF;
+    text-align: center;
+
+    border-bottom: 1px solid #FFF;
+}
+
+#wrapper > section > section > section.album-section > a > div.album {
+    width: 183px;
+    height: 190px;
+
+    float: left;
+
+    margin: 10px 20px;
+
+    border: 1px solid white;
+}
+
+#wrapper > section > section > section.album-section > a > div.album > img {
+    width: 100%;
+    height: 150px;
+}
+
+#wrapper > section > section > section.album-section > a > div.album > p {
+    width: 100%;
+    height: 40px;
+
+    font-size: 12px;
+    padding-top: 5px;
+    margin: 0;
+
+    color: #FFF;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.35);
+}

@@ -1,0 +1,107 @@
+<?php session_start(); ?>
+<html>
+<head>
+    <title>Home</title>
+
+    <link rel="stylesheet" href="Styles/basic-template.css"/>
+    <link rel="stylesheet" href="Styles/home.css"/>
+
+    <?php include 'App_Code/userOperations.php'; ?>
+</head>
+<body onload="imageSwitch()">
+<div class="background-image" id="background"></div>
+    <div id="wrapper">
+        <header>
+            <img src="Images/site-logo.png" alt="img is here"/>
+            <div>
+                <span> <?php getUsername(); ?> </span>
+                <div>
+                    <!-- hidden menu -->
+                    <a href="charts.php"><p>Charts</p></a>
+                    <a href="#"><p>My Playlists</p></a>
+                    <a href="#"><p>Log Out</p></a>
+                </div>
+            </div>
+            <form action="search.php" method="post">
+                <input type="search" name="search" id="search"/>
+                <input type="submit" name="submit" value="Search"/>
+            </form>
+        </header>
+        <section>
+            <nav>
+                <ul>
+                    <li class="current-page"><a href="#">HOME</a></li>
+                    <li><a href="#" id="all" onclick="chart(this)">CHART</a>
+                        <ul>
+                            <?php echo getChartCategories(); ?>
+                        </ul>
+                    </li> <!-- Submenu -->
+                    <li><a href="#">PLAYLISTS</a></li>
+                    <li><a href="#">CONTACTS</a></li>
+                </ul>
+            </nav>
+
+            <section class="releases-preview"> <!-- Sliding Images -->
+                <img src="Images/img0.jpg" alt="test" id="sliding-image"/>
+            </section>
+
+            <section class="content-wrapper">
+                <section class="album-section">
+                    <!-- Albums Section -->
+                    <p>Album Releases</p>
+                    <?php
+                        for($i = 0; $i < 9; $i++) {
+                            echo "<div class='album'>".
+                                    "<img src='Images/test-album-cover.jpg' alt='Album Cover'/>".
+                                    "<p>Album $i</p>".
+                                 "</div>";
+                        }
+                    ?>
+                </section>
+
+                <aside class="top-ten-chart">
+                    <!-- Top 10 Chart -->
+                    <p>Top 10 Chart</p>
+
+                    <?php
+                        for ($j = 0; $j < 9; $j++) {
+                            echo "<div class='track'>
+                                    <aside>
+                                        <form action='addSong.php' method='post'>
+                                            <input type='submit' name='playlist' class='playlist' value=''/>
+                                            <input type='submit' name='cart' class='cart' value=''/>
+                                        </form>
+                                    </aside>
+                                    <div class='song-info'>
+                                        <p>Song Title $j</p>
+                                        <p>Author $j</p>
+                                    </div>
+                                  </div>";
+                        }
+                    ?>
+                </aside>
+            </section>
+        </section>
+        <footer>
+            <p>&copy; All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        var counter = 0;
+        function imageSwitch() {
+           setInterval(function changeBackground() {
+               document.getElementById('background').style.backgroundImage = "url(Images/img" + counter + ".jpg)";
+               document.getElementById('sliding-image').src = "Images/img" + counter + ".jpg";
+
+               counter = (counter + 1) % 5;
+           }, 5000);
+        }
+
+        function chart(elem) {
+            var genre = elem.id;
+            window.open('charts.php?genre=' + genre, '_self', false);
+        }
+    </script>
+</body>
+</html>

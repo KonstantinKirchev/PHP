@@ -1,0 +1,32 @@
+class Person 
+{
+	public $firstName;
+	public $lastName;
+	public $age;
+
+	function _constructor($fname, $lname, $age){
+		$this->firstName = $fname;
+		$this->lastName = $lname;
+		$this->age = $age;
+	}
+}
+
+$p = new Person("Konstantin", "Kirchev", 33);
+var_dump($p);
+
+или
+
+$p = [
+	new Person("Svetlin", "Nakov", 22),
+	new Person("Todor", "Todorov", 12),
+	new Person("Kiro", "Kirov", 32),
+];
+
+usort($p, function($p1,$p2){
+	return $p1->age - $p2->age;
+});
+
+echo $p[0]->firstName; -> Kiro
+$p[0]->email = 'konstantin1230@yahoo.com'; - Така добавям email на 1вият човек.
+var_dump($p);
+
